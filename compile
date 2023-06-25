@@ -1,0 +1,5 @@
+#! /bin/bash
+chmod 755 ./compile
+echo "Enter the file name"
+read filename
+nasm -f elf64 -o build/$filename.o $filename.s && gcc -o build/$filename build/$filename.o -nostdlib -no-pie && ./build/$filename
